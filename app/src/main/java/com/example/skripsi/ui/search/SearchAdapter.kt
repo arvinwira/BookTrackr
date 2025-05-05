@@ -1,6 +1,5 @@
 package com.example.skripsi.ui.search
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,7 +7,6 @@ import com.bumptech.glide.Glide
 import com.example.skripsi.R
 import com.example.skripsi.data.remote.Book
 import com.example.skripsi.databinding.ItemBookBinding
-import com.example.skripsi.ui.bookdetail.BookDetailActivity
 
 class SearchAdapter(
     private val books: List<Book>,

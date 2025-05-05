@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.skripsi.databinding.FragmentSettingsBinding
 import com.example.skripsi.ui.auth.WelcomeActivity
-import com.example.skripsi.util.NotificationHelper
 import com.example.skripsi.util.NotificationPermissionHelper
 import com.example.skripsi.util.PreferenceManager
 import com.example.skripsi.util.ReminderManager
@@ -19,8 +18,6 @@ class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
     private val settingsViewModel: SettingsViewModel by viewModels()
-
-    // Add these properties
     private lateinit var notificationPermissionHelper: NotificationPermissionHelper
     private lateinit var preferenceManager: PreferenceManager
     private lateinit var reminderManager: ReminderManager
@@ -36,7 +33,6 @@ class SettingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialize helpers
         notificationPermissionHelper = NotificationPermissionHelper(requireContext())
         preferenceManager = PreferenceManager(requireContext())
         reminderManager = ReminderManager(requireContext())
@@ -47,14 +43,11 @@ class SettingsFragment : Fragment() {
 
         settingsViewModel.fetchEmail()
 
-        // Set up notification switch
         binding.notificationSwitch.isChecked = preferenceManager.isDailyReminderEnabled()
         binding.notificationSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                // User wants to enable notifications
                 enableNotifications()
             } else {
-                // User wants to disable notifications
                 disableNotifications()
             }
         }
@@ -74,16 +67,13 @@ class SettingsFragment : Fragment() {
     }
 
     private fun enableNotifications() {
-        // Check if we have permission
         if (notificationPermissionHelper.requestNotificationPermissionIfNeeded(this)) {
-            // Permission granted or not needed, enable notifications
             preferenceManager.setDailyReminderEnabled(true)
             reminderManager.scheduleDailyReminder()
             Toast.makeText(requireContext(),
                 "Daily reading reminders enabled",
                 Toast.LENGTH_SHORT).show()
         }
-        // If permission not granted, we'll handle in onRequestPermissionsResult
     }
 
     private fun disableNotifications() {
@@ -94,15 +84,6 @@ class SettingsFragment : Fragment() {
             Toast.LENGTH_SHORT).show()
     }
 
-    private fun askToOpenSettings() {
-        // In a real app, you might want to use a proper dialog here
-        Toast.makeText(requireContext(),
-            "Would you like to open settings to enable notifications?",
-            Toast.LENGTH_LONG).show()
-
-        // For demo purposes, we'll just open settings directly
-        notificationPermissionHelper.openNotificationSettings()
-    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -116,7 +97,6 @@ class SettingsFragment : Fragment() {
         )
 
         if (granted) {
-            // Permission granted, update UI and enable notifications
             binding.notificationSwitch.isChecked = true
             preferenceManager.setDailyReminderEnabled(true)
             reminderManager.scheduleDailyReminder()
@@ -124,7 +104,6 @@ class SettingsFragment : Fragment() {
                 "Notification permission granted",
                 Toast.LENGTH_SHORT).show()
         } else {
-            // Permission denied, update UI
             binding.notificationSwitch.isChecked = false
             preferenceManager.setDailyReminderEnabled(false)
             Toast.makeText(requireContext(),

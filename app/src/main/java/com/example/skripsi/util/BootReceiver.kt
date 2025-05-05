@@ -5,10 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 
-/**
- * Receiver that gets triggered when the device boots
- * Used to reschedule our reading reminders
- */
+
 class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == Intent.ACTION_BOOT_COMPLETED) {
@@ -19,7 +16,6 @@ class BootReceiver : BroadcastReceiver() {
             if (preferenceManager.isDailyReminderEnabled()) {
                 Log.d("BootReceiver", "Reminders are enabled, rescheduling")
 
-                // Reschedule the daily reminder
                 val reminderManager = ReminderManager(context)
                 reminderManager.scheduleDailyReminder()
             } else {

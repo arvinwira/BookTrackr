@@ -29,30 +29,23 @@ class WantToReadActivity : AppCompatActivity() {
         binding = ActivityWantToReadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set up toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = getString(R.string.button_Want_To_Read)
 
-        // Set up adapter with delete and click listeners
         adapter = WantToReadAdapter(
             onDeleteClick = { book -> viewModel.deleteBook(book) },
             onBookClick = { book -> navigateToBookDetail(book) }
         )
 
-        // Set up RecyclerView
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
 
-        // Get current user
         val userId = FirebaseAuth.getInstance().currentUser?.uid
 
-        // Load books if user is logged in
         userId?.let { viewModel.loadWantToReadBooks(it) }
 
-        // Observe books from ViewModel
         viewModel.books.observe(this) { books ->
-            // Toggle empty state visibility based on book list
             binding.emptyStateLayout.visibility = if (books.isEmpty()) View.VISIBLE else View.GONE
             binding.recyclerView.visibility = if (books.isEmpty()) View.GONE else View.VISIBLE
 
@@ -60,9 +53,7 @@ class WantToReadActivity : AppCompatActivity() {
         }
     }
 
-    // Function to navigate to book details
     private fun navigateToBookDetail(bookEntity: BookEntity) {
-        // Convert BookEntity to Book for BookDetailActivity
         val book = Book(
             id = bookEntity.id,
             title = bookEntity.title,
@@ -83,14 +74,12 @@ class WantToReadActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    // Refresh data when returning to activity
     override fun onResume() {
         super.onResume()
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let { viewModel.loadWantToReadBooks(it) }
     }
 
-    // Handle back button
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {

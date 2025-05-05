@@ -19,7 +19,6 @@
         android:gravity="center_horizontal"
         android:padding="10dp">
 
-        <!-- Book Cover with Shadow Effect -->
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,7 +30,6 @@
                 android:layout_width="110dp"
                 android:layout_height="160dp">
 
-                <!-- Placeholder for missing images -->
                 <ImageView
                     android:id="@+id/Image_unknown"
                     android:layout_width="match_parent"
@@ -43,7 +41,6 @@
                     android:alpha="0.5"
                     android:visibility="gone"/>
 
-                <!-- Actual book cover -->
                 <ImageView
                     android:id="@+id/bookImageView"
                     android:layout_width="match_parent"
@@ -53,7 +50,6 @@
             </FrameLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Book Title with limited lines -->
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="match_parent"
@@ -68,7 +64,6 @@
             android:textStyle="bold"
             android:layout_marginBottom="4dp"/>
 
-        <!-- Author name -->
         <TextView
             android:id="@+id/authorTextView"
             android:layout_width="match_parent"

@@ -29,12 +29,10 @@ class CurrentlyReadingActivity : AppCompatActivity() {
         binding = ActivityCurrentlyReadingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set up toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = getString(R.string.button_Currently_Reading)
 
-        // Set up RecyclerView
         adapter = CurrentlyReadingAdapter(
             onDeleteClick = { book -> viewModel.deleteBook(book) },
             onBookClick = { book -> navigateToBookDetail(book) }
@@ -55,7 +53,6 @@ class CurrentlyReadingActivity : AppCompatActivity() {
     }
 
     private fun navigateToBookDetail(bookEntity: BookEntity) {
-        // Convert BookEntity to Book for BookDetailActivity
         val book = Book(
             id = bookEntity.id,
             title = bookEntity.title,
@@ -78,7 +75,6 @@ class CurrentlyReadingActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        // Refresh data when returning from other activities
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let { viewModel.loadCurrentlyReadingBooks(it) }
     }

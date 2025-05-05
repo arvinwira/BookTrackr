@@ -42,7 +42,6 @@ class SearchFragment : Fragment() {
         setupBackButton()
         setupObservers()
 
-        // Initially show the explore section
         showExploreSection()
     }
 
@@ -52,7 +51,6 @@ class SearchFragment : Fragment() {
     }
 
     private fun setupCategories() {
-        // Define categories
         val categories = listOf(
             Category("Comp-Sci", "Computer Science"),
             Category("Science", "science"),
@@ -89,33 +87,25 @@ class SearchFragment : Fragment() {
 
     private fun setupBackButton() {
         binding.backButton.setOnClickListener {
-            // Clear the search box
             binding.edSearchBook.text?.clear()
 
-            // Show the explore section again
             showExploreSection()
         }
     }
 
     private fun showExploreSection() {
-        // Hide back button and results section
         binding.backButton.visibility = View.GONE
         binding.searchResultsTitle.visibility = View.GONE
         binding.rvSearch.visibility = View.GONE
         binding.noResultsText.visibility = View.GONE
-
-        // Show explore section
         binding.exploreSectionTitle.visibility = View.VISIBLE
         binding.categoriesRecyclerView.visibility = View.VISIBLE
     }
 
     private fun showResultsSection(title: String) {
-        // Show back button and results section
         binding.backButton.visibility = View.VISIBLE
         binding.searchResultsTitle.visibility = View.VISIBLE
         binding.searchResultsTitle.text = title
-
-        // Hide explore section
         binding.exploreSectionTitle.visibility = View.GONE
         binding.categoriesRecyclerView.visibility = View.GONE
     }
@@ -156,10 +146,8 @@ class SearchFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        // Reset to explore section whenever the fragment resumes
         showExploreSection()
 
-        // Clear search text
         binding.edSearchBook.text?.clear()
     }
 

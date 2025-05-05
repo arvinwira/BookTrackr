@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.auth.LoginActivity">
 
-
-    <!-- Logo -->
     <ImageView
         android:id="@+id/logoImage"
         android:layout_width="120dp"
@@ -19,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Login Card -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,7 +37,6 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <!-- Title -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,7 +47,6 @@
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
-            <!-- Welcome text -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,7 +56,6 @@
                 android:textColor="@color/author_color"
                 android:textSize="16sp" />
 
-            <!-- Email Field -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -83,7 +77,6 @@
                     android:padding="16dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Password Field -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,8 +101,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-
-            <!-- Login Button -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
@@ -122,7 +113,6 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Don't have an account text -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

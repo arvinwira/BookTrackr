@@ -10,9 +10,6 @@ import androidx.core.app.NotificationCompat
 import com.example.skripsi.R
 import com.example.skripsi.ui.main.MainActivity
 
-/**
- * Helper class to create and manage notifications
- */
 class NotificationHelper(private val context: Context) {
 
     companion object {
@@ -21,13 +18,10 @@ class NotificationHelper(private val context: Context) {
     }
 
     init {
-        // Create the notification channel (required for Android 8.0+)
         createNotificationChannel()
     }
 
-    /**
-     * Creates a notification channel for our reading reminders
-     */
+
     private fun createNotificationChannel() {
         // Only needed for Android Oreo (API 26) and higher
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -45,22 +39,17 @@ class NotificationHelper(private val context: Context) {
         }
     }
 
-    /**
-     * Shows the daily reading reminder notification
-     */
+
     fun showReadingReminderNotification() {
-        // Create an intent that opens the main activity when the notification is tapped
         val intent = Intent(context, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
 
-        // Create a PendingIntent
         val pendingIntent = PendingIntent.getActivity(
             context, 0, intent,
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
 
-        // Build the notification
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.logo) // Use an appropriate icon from your resources
             .setContentTitle("Time to Read!")
@@ -69,7 +58,6 @@ class NotificationHelper(private val context: Context) {
             .setContentIntent(pendingIntent)
             .setAutoCancel(true) // Automatically removes the notification when tapped
 
-        // Show the notification
         val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(NOTIFICATION_ID, builder.build())
     }

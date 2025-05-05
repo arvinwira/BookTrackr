@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private var doubleBackToExitPressedOnce = false
 
-    // Add these properties for notification handling
     private lateinit var notificationPermissionHelper: NotificationPermissionHelper
     private lateinit var preferenceManager: PreferenceManager
     private lateinit var reminderManager: ReminderManager
@@ -33,42 +32,32 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize notification helpers
         notificationPermissionHelper = NotificationPermissionHelper(this)
         preferenceManager = PreferenceManager(this)
         reminderManager = ReminderManager(this)
 
-        // Find the NavHostFragment and get the NavController
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as? NavHostFragment
             ?: throw IllegalStateException("NavHostFragment not found")
         navController = navHostFragment.navController
 
-        // Set up BottomNavigationView with NavController
         binding.bottomNavigation.setupWithNavController(navController)
 
-        // Check if notifications are enabled in preferences
         if (preferenceManager.isDailyReminderEnabled()) {
-            // Request notification permission (if needed) and setup reminders
             setupNotifications()
         }
     }
 
     private fun setupNotifications() {
-        // Show rationale before requesting permission (for better UX)
         if (!NotificationPermissionHelper.hasNotificationPermission(this) &&
             NotificationPermissionHelper.isPermissionRequired()) {
 
             notificationPermissionHelper.showNotificationPermissionRationale(this) {
-                // This will be called after showing the rationale
                 if (notificationPermissionHelper.requestNotificationPermissionIfNeeded(this)) {
-                    // Permission already granted, schedule reminder
                     reminderManager.scheduleDailyReminder()
                 }
-                // If permission not granted, we'll handle it in onRequestPermissionsResult
             }
         } else {
-            // Permission already granted or not required, schedule reminder
             reminderManager.scheduleDailyReminder()
         }
     }
@@ -80,17 +69,14 @@ class MainActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-        // Process notification permission result
         val granted = notificationPermissionHelper.processPermissionResult(
             requestCode, permissions, grantResults
         )
 
         if (granted) {
-            // Permission granted, schedule reminders
             reminderManager.scheduleDailyReminder()
             Toast.makeText(this, "Reading reminders are now enabled", Toast.LENGTH_SHORT).show()
         } else {
-            // Permission denied, update preferences
             preferenceManager.setDailyReminderEnabled(false)
             Toast.makeText(this,
                 "Notification permission denied. Daily reminders won't work.",

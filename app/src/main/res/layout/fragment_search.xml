@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Header Section -->
         <TextView
             android:id="@+id/welcomeTextView"
             android:layout_width="0dp"
@@ -52,7 +51,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/searchSubtitle" />
 
-        <!-- Search Box -->
         <androidx.cardview.widget.CardView
             android:id="@+id/searchCard"
             android:layout_width="0dp"
@@ -106,7 +104,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Explore Section -->
         <LinearLayout
             android:id="@+id/exploreSection"
             android:layout_width="0dp"
@@ -137,7 +134,6 @@
                 android:paddingBottom="16dp" />
         </LinearLayout>
 
-        <!-- Search Results Section -->
         <LinearLayout
             android:id="@+id/resultsSection"
             android:layout_width="0dp"

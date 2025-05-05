@@ -41,24 +41,19 @@ class GoalsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Initialize ViewModel
         val repository = Repository(requireContext())
         val factory = ViewModelFactory(repository)
         viewModel = ViewModelProvider(this, factory)[GoalsViewModel::class.java]
 
-        // Set up observers
         setupObservers()
 
-        // Load data
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let { viewModel.loadReadingStats(it) }
 
-        // Set up click listeners
         binding.editGoalButton.setOnClickListener {
             showGoalEditDialog()
         }
 
-        // Set up view all achievements button
         binding.viewAllAchievementsButton.setOnClickListener {
             val intent = Intent(requireContext(), AchievementsActivity::class.java)
             startActivity(intent)
@@ -73,7 +68,6 @@ class GoalsFragment : Fragment() {
         viewModel.finishedBooksCount.observe(viewLifecycleOwner) { count ->
             binding.booksReadText.text = "$count books"
 
-            // Update progress if we have the goal
             viewModel.annualGoal.value?.let { goal ->
                 val progress =
                     if (goal > 0) (count.toFloat() / goal.toFloat() * 100).roundToInt() else 0
@@ -86,7 +80,6 @@ class GoalsFragment : Fragment() {
             binding.booksInProgressText.text = "$count books"
         }
 
-        // Add observers for achievements
         viewModel.newAchievements.observe(viewLifecycleOwner) { achievements ->
             if (achievements.isNotEmpty()) {
                 showAchievementPopup(achievements.first())
@@ -102,7 +95,6 @@ class GoalsFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        // Reload stats when returning to the fragment
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let {
             Log.d("GoalsFragment", "Reloading reading stats on resume for user: $userId")
@@ -114,7 +106,6 @@ class GoalsFragment : Fragment() {
         binding.recentAchievementsLayout.removeAllViews()
 
         if (achievements.isEmpty()) {
-            // Show placeholder if no achievements
             val placeholder = TextView(requireContext())
             placeholder.text = "Complete goals to earn achievements!"
             placeholder.textAlignment = View.TEXT_ALIGNMENT_CENTER
@@ -122,7 +113,6 @@ class GoalsFragment : Fragment() {
             return
         }
 
-        // Add recent achievement icons
         for (achievement in achievements) {
             val imageView = ImageView(requireContext())
             val params = ViewGroup.MarginLayoutParams(
@@ -152,7 +142,6 @@ class GoalsFragment : Fragment() {
         goalSlider.value = currentGoal.toFloat()
         selectedGoalText.text = "Selected: $currentGoal books"
 
-        // Update text when slider changes
         goalSlider.addOnChangeListener { _, value, _ ->
             selectedGoalText.text = "Selected: ${value.toInt()} books"
         }
@@ -182,19 +171,16 @@ class GoalsFragment : Fragment() {
         val dialog = Dialog(requireContext())
         dialog.setContentView(dialogView)
 
-        // Set achievement details
         dialogView.findViewById<TextView>(R.id.popupAchievementTitle).text = achievement.title
         dialogView.findViewById<TextView>(R.id.popupAchievementDescription).text =
             achievement.description
         dialogView.findViewById<ImageView>(R.id.popupAchievementIcon)
             .setImageResource(achievement.iconResource)
 
-        // Set close button action
         dialogView.findViewById<Button>(R.id.popupCloseButton).setOnClickListener {
             dialog.dismiss()
         }
 
-        // Show dialog
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         dialog.show()
     }

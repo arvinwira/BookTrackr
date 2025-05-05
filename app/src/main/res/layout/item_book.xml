@@ -44,7 +44,6 @@
                 android:background="#F5F5F5"/>
         </androidx.cardview.widget.CardView>
 
-        <!-- Book Details -->
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="0dp"

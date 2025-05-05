@@ -2,8 +2,6 @@ package com.example.skripsi.data.local
 
 import android.util.Log
 import com.example.skripsi.R
-import com.example.skripsi.data.local.Achievement
-import com.example.skripsi.data.local.AchievementEntity
 import com.example.skripsi.data.repository.Repository
 
 class AchievementService(private val repository: Repository) {

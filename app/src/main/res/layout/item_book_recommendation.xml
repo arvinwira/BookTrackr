@@ -14,7 +14,6 @@
         android:orientation="vertical"
         android:padding="8dp">
 
-        <!-- Book Cover -->
         <ImageView
             android:id="@+id/recommendedBookImage"
             android:layout_width="120dp"
@@ -24,7 +23,6 @@
             android:layout_marginBottom="8dp"
             android:contentDescription="Book cover" />
 
-        <!-- Book Title -->
         <TextView
             android:id="@+id/recommendedBookTitle"
             android:layout_width="match_parent"
@@ -36,7 +34,6 @@
             android:textSize="14sp"
             android:textStyle="bold" />
 
-        <!-- Book Author -->
         <TextView
             android:id="@+id/recommendedBookAuthor"
             android:layout_width="match_parent"

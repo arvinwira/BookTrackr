@@ -20,19 +20,11 @@ class CurrentlyReadingAdapter(
     private val onBookClick: (BookEntity) -> Unit
 ) : ListAdapter<CurrentlyReadingAdapter.BookWithProgress, CurrentlyReadingAdapter.BookViewHolder>(BookDiffCallback()) {
 
-    // Data class to hold book with its reading progress
+
     data class BookWithProgress(
         val book: BookEntity,
         val progress: Int = 0
     )
-
-    private var bookProgressMap = mutableMapOf<String, Int>()
-
-    fun updateProgressData(progressMap: Map<String, Int>) {
-        bookProgressMap.clear()
-        bookProgressMap.putAll(progressMap)
-        notifyDataSetChanged()
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
         val binding = ItemBookCurrentlyBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -65,14 +57,11 @@ class CurrentlyReadingAdapter(
                 onDeleteClick(book)
             }
 
-            // Set click listener on the item view
             binding.root.setOnClickListener {
                 onBookClick(book)
             }
 
-            // Set click listener for direct reading button
             binding.readNowButton.setOnClickListener {
-                // Convert BookEntity to Book for ReadingActivity
                 val bookData = Book(
                     id = book.id,
                     title = book.title,

@@ -266,7 +266,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Spacer to ensure content doesn't get hidden behind buttons -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="80dp"

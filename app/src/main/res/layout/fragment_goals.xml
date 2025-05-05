@@ -19,7 +19,6 @@
         android:paddingTop="16dp"
         android:paddingBottom="24dp">
 
-        <!-- Header -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,7 +37,6 @@
             android:background="@color/lightRed"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Annual Goal Card -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -131,7 +129,6 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!-- Reading Stats Card - Modified to remove reading time -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -232,7 +229,6 @@
                     android:layout_marginBottom="12dp"
                     android:gravity="center">
 
-                    <!-- Recent achievements will be added here dynamically -->
                 </LinearLayout>
 
                 <Button

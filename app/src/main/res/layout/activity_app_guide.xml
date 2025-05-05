@@ -28,7 +28,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- App Logo -->
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="60dp"
@@ -37,7 +36,6 @@
                 android:layout_marginBottom="24dp"
                 android:src="@drawable/logo" />
 
-            <!-- About this App -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,7 +59,6 @@
                 android:textSize="16sp"
                 android:layout_marginBottom="24dp" />
 
-            <!-- Key Features -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,7 +74,6 @@
                 android:layout_marginBottom="16dp"
                 android:background="@color/lightRed" />
 
-            <!-- Feature: Discover Books -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -109,7 +105,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Feature: Track Reading -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -141,7 +136,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Feature: Read Online -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -173,7 +167,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Feature: Reading Goals -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -205,7 +198,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- How to Use -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -222,7 +214,6 @@
                 android:layout_marginBottom="16dp"
                 android:background="@color/lightRed" />
 
-            <!-- Step 1 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -246,7 +237,6 @@
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
 
-            <!-- Step 2 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -270,7 +260,6 @@
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
 
-            <!-- Step 3 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -294,7 +283,6 @@
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
 
-            <!-- Step 4 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -318,7 +306,6 @@
                     android:textColor="?attr/colorOnBackground" />
             </LinearLayout>
 
-            <!-- Step 5 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

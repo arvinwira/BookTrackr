@@ -24,7 +24,6 @@ class FinishedReadingActivity : AppCompatActivity() {
         binding = ActivityFinishedReadingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set up toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)

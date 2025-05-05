@@ -7,19 +7,16 @@
     android:gravity="center"
     android:padding="32dp">
 
-    <!-- Illustration background -->
     <FrameLayout
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginBottom="40dp">
 
-        <!-- Background circle -->
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/walkthrough_circle_background" />
 
-        <!-- Walkthrough illustration -->
         <ImageView
             android:id="@+id/walkthroughImage"
             android:layout_width="200dp"
@@ -28,7 +25,6 @@
             android:contentDescription="walkthrough_image" />
     </FrameLayout>
 
-    <!-- Title -->
     <TextView
         android:id="@+id/walkthroughTitle"
         android:layout_width="match_parent"
@@ -40,14 +36,12 @@
         android:text="Title placeholder"
         android:layout_marginBottom="8dp" />
 
-    <!-- Title accent bar -->
     <View
         android:layout_width="80dp"
         android:layout_height="3dp"
         android:background="@color/lightRed"
         android:layout_marginBottom="24dp" />
 
-    <!-- Description -->
     <TextView
         android:id="@+id/walkthroughDescription"
         android:layout_width="match_parent"

@@ -30,22 +30,17 @@ class GoalsViewModel(private val repository: Repository) : ViewModel() {
     fun loadReadingStats(userId: String) {
         viewModelScope.launch {
             try {
-                // Get annual goal
                 val goal = repository.getUserAnnualGoal(userId)
                 _annualGoal.postValue(goal)
 
-                // Get finished books count
                 val finishedBooks = repository.getFinishedReadingBooks(userId)
                 _finishedBooksCount.postValue(finishedBooks.size)
 
-                // Get currently reading books count
                 val currentlyReading = repository.getCurrentlyReadingBooks(userId)
                 _currentlyReadingCount.postValue(currentlyReading.size)
 
-                // Check for new achievements
                 checkForNewAchievements(userId)
 
-                // Load recent achievements
                 loadRecentAchievements(userId)
             } catch (e: Exception) {
                 Log.e("GoalsViewModel", "Error loading reading stats: ${e.message}", e)
@@ -58,7 +53,6 @@ class GoalsViewModel(private val repository: Repository) : ViewModel() {
             repository.saveUserAnnualGoal(userId, goal)
             _annualGoal.postValue(goal)
 
-            // Check for goal-related achievements after updating
             checkForNewAchievements(userId)
         }
     }
@@ -94,7 +88,6 @@ class GoalsViewModel(private val repository: Repository) : ViewModel() {
         viewModelScope.launch {
             try {
                 val allAchievements = repository.getUserAchievements(userId)
-                // Get the 3 most recent achievements
                 val recent = allAchievements.sortedByDescending { it.unlockedDate }.take(3)
                 _recentAchievements.postValue(recent)
             } catch (e: Exception) {

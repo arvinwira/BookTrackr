@@ -16,7 +16,6 @@
         android:layout_height="wrap_content"
         android:paddingBottom="24dp">
 
-        <!-- Header with logo and app name -->
         <ImageView
             android:id="@+id/logoImageView"
             android:layout_width="80dp"
@@ -42,7 +41,6 @@
             app:layout_constraintBottom_toBottomOf="@id/logoImageView"
             android:layout_marginStart="12dp"/>
 
-        <!-- Profile Section Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/profileCard"
             android:layout_width="match_parent"
@@ -100,8 +98,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-
-        <!-- Notifications Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/notificationsCard"
             android:layout_width="match_parent"
@@ -187,7 +183,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- App Guide and Help Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/appGuideCard"
             android:layout_width="match_parent"
@@ -257,7 +252,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Logout Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogout"
             android:layout_width="match_parent"

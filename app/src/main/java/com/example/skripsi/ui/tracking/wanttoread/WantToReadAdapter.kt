@@ -46,7 +46,6 @@ class WantToReadAdapter(
                 onDeleteClick(book)
             }
 
-            // Set click listener on the entire item
             binding.root.setOnClickListener {
                 onBookClick(book)
             }

@@ -45,9 +45,7 @@ class FinishedReadingAdapter (
                 onDeleteClick(book)
             }
 
-            // Set click listener on the item view
             binding.root.setOnClickListener {
-                // Convert BookEntity to Book object
                 val bookData = Book(
                     id = book.id,
                     title = book.title,
