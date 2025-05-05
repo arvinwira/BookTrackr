@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "621726487305",
+    "project_id": "booktrackr-56b50",
+    "storage_bucket": "booktrackr-56b50.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621726487305:android:22faad92dffc1238c5f9d8",
+        "android_client_info": {
+          "package_name": "com.example.skripsi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZMZAPEX0RaQid7P6SrRjUIRWx08obzcM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

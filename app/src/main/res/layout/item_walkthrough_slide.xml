@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp">
+
+    <!-- Illustration background -->
+    <FrameLayout
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="40dp">
+
+        <!-- Background circle -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/walkthrough_circle_background" />
+
+        <!-- Walkthrough illustration -->
+        <ImageView
+            android:id="@+id/walkthroughImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:contentDescription="walkthrough_image" />
+    </FrameLayout>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/walkthroughTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Title placeholder"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Title accent bar -->
+    <View
+        android:layout_width="80dp"
+        android:layout_height="3dp"
+        android:background="@color/lightRed"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/walkthroughDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#555555"
+        android:textSize="16sp"
+        android:text="Description placeholder"
+        android:lineSpacingExtra="4dp" />
+
+</LinearLayout>

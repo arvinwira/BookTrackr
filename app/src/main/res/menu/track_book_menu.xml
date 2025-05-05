@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_currently_reading"
+        android:title="Currently Reading" />
+    <item
+        android:id="@+id/action_want_to_read"
+        android:title="Want to Read" />
+    <item
+        android:id="@+id/action_finished_reading"
+        android:title="Finished Reading" />
+</menu>

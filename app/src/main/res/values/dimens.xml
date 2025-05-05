@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="achievement_icon_size">48dp</dimen>
+    <dimen name="achievement_icon_margin">8dp</dimen>
+
+    <dimen name="popup_corner_radius">12dp</dimen>
+    <dimen name="popup_elevation">6dp</dimen>
+</resources>
+

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BookTrackr</string>
+
+    <!-- Login and Registration -->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="log_out">Log Out</string>
+
+    <!-- Login and Register Strings -->
+    <string name="app_logo_description">App logo</string>
+    <string name="login_welcome_text">Welcome back to your book journey</string>
+    <string name="no_account_question">Don\'t have an account? </string>
+
+    <!-- Register Strings -->
+    <string name="register_welcome_text">Create an account to start your reading journey</string>
+    <string name="have_account_question">Already have an account? </string>
+
+
+    <!-- Navigation -->
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="goals">Goals</string>
+    <string name="settings">Settings</string>
+
+    <!-- Home screen -->
+    <string name="welcome">Welcome to BookTrackr</string>
+    <string name="new_books">New Books</string>
+    <string name="button_Currently_Reading">Currently Reading</string>
+    <string name="button_Want_To_Read">Want to Read</string>
+    <string name="button_Finished_Reading">Finished Reading</string>
+
+    <!-- Settings -->
+    <string name="account">Account</string>
+    <string name="language">Language</string>
+    <string name="english">English</string>
+    <string name="indonesian">Indonesian (Bahasa Indonesia)</string>
+    <string name="change_language">Change Language</string>
+    <string name="change_language_message">Change language to %s? The app needs to restart to apply changes.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="language_restart_note">App restart required for language changes to take effect</string>
+    <string name="notifications">Notifications</string>
+    <string name="daily_reminder">Daily Reading Reminder</string>
+    <string name="daily_reminder_description">Receive a daily reminder at 5:00 PM to read</string>
+    <string name="reminders_enabled">Daily reading reminders enabled</string>
+    <string name="reminders_disabled">Daily reading reminders disabled</string>
+    <string name="test_notification">Test Notification</string>
+    <string name="test_sent">Test notification sent</string>
+    <string name="cannot_send_test">Cannot send test notification - permission denied</string>
+    <string name="help_about">Help &amp; About</string>
+    <string name="app_guide">App Guide</string>
+
+    <!-- Book details -->
+    <string name="author">Author</string>
+    <string name="publisher">Publisher</string>
+    <string name="pages">Pages</string>
+    <string name="year">Year</string>
+    <string name="read">Read</string>
+    <string name="description">Description</string>
+    <string name="no_description">No description available</string>
+    <string name="manage_book">Manage Book</string>
+
+    <string name="authorTitle">Author</string>
+    <string name="publisherTitle">Publisher</string>
+    <string name="title_rv">Title</string>
+    <string name="author_rv">Author</string>
+
+    <string name="book_image_description">Book cover image</string>
+    <string name="book_details">Book Details</string>
+
+    <!-- Search -->
+    <string name="search_books">Search Books</string>
+    <string name="search_subtitle">Find your next favorite book</string>
+    <string name="search_hint">Search by title, author or keyword</string>
+
+    <!-- Common -->
+    <string name="no_title">No Title Available</string>
+    <string name="unknown_author">Unknown Author</string>
+
+    <!-- Walkthrough -->
+    <!-- Walkthrough Strings -->
+    <string name="walkthroughtitle1">Discover Books</string>
+    <string name="walkthroughdesc1">Search for books and add them to your collection</string>
+    <string name="walkthroughtitle2">Read Anywhere</string>
+    <string name="walkthroughdesc2">Access your books and track your reading progress</string>
+    <string name="walkthroughtitle3">Achieve Your Goals</string>
+    <string name="walkthroughdesc3">Set reading targets and earn achievements</string>
+    <string name="your_achievement_progress">Your Achievement Progress</string>
+
+    <!-- App Guide Strings -->
+    <string name="about_this_app">About this App</string>
+    <string name="app_description">BookTrackr is a digital reading companion that helps you discover, track, and enjoy your reading journey. This app connects to the DBooks.org API to provide free access to a wide variety of e-books.</string>
+    <string name="key_features">Key Features</string>
+    <string name="feature_discover_title">📚 Discover Books</string>
+    <string name="feature_discover_desc">Browse recently added books or search for specific titles by keyword. The Home screen shows new additions while the Search tab allows you to find books by title, author, or topic.</string>
+    <string name="feature_track_title">📝 Track Your Reading</string>
+    <string name="feature_track_desc">Organize your books into three categories:\n\n• Currently Reading: Books you\'re actively reading with progress tracking\n• Want to Read: Your reading wishlist\n• Finished Reading: Books you\'ve completed</string>
+    <string name="feature_read_title">📱 Read Online</string>
+    <string name="feature_read_desc">Access books directly within the app. Your reading progress is automatically saved, so you can pick up right where you left off.</string>
+    <string name="feature_goals_title">🎯 Reading Goals</string>
+    <string name="feature_goals_desc">Set annual reading goals and track your progress. The Goals tab shows:\n\n• Your annual book target\n• Achievements\n• Books completed and in progress</string>
+    <string name="how_to_use">How to Use</string>
+    <string name="step1">Browse or search for books using the Home or Search tabs</string>
+    <string name="step2">Tap on a book to view its details</string>
+    <string name="step3">Add the book to your library using the \'Manage Book\' button and select a status</string>
+    <string name="step4">Start reading the book by tapping the \'Read\' button</string>
+    <string name="step5">Check your reading progress and set goals in the Goals tab</string>
+
+    <string name="goal_dialog_question">How many books do you want to read this year?</string>
+    <string name="goal_min_value">5</string>
+    <string name="goal_max_value">100</string>
+    <string name="goal_selected_format">Selected: %d books</string>
+    <string name="goals_title"><![CDATA[Reading Goals & Stats]]></string>
+    <string name="annual_reading_goal">Annual Reading Goal</string>
+    <string name="goals_edit">Edit</string>
+    <string name="reading_statistics">Reading Statistics</string>
+    <string name="books_read">Books Read:</string>
+    <string name="_0_books">0 books</string>
+    <string name="books_in_progress">Books in Progress:</string>
+    <string name="view_all_achievements">View all achievements</string>
+    <string name="achievements">Achievements</string>
+    <string name="reading_progress">Reading Progress:</string>
+    <string name="continue_reading">Continue Reading</string>
+
+    <!-- Achievement Titles -->
+    <string name="achievement_first_steps_title">First Steps</string>
+    <string name="achievement_first_finish_title">First Finish</string>
+    <string name="achievement_bookworm_title">Bookworm</string>
+    <string name="achievement_book_collector_title">Book Collector</string>
+    <string name="achievement_library_master_title">Library Master</string>
+    <string name="achievement_bookworm_pro_title">Bookworm Pro</string>
+    <string name="achievement_goal_crusher_title">Goal Crusher</string>
+    <string name="achievement_busy_reader_title">Busy Reader</string>
+    <string name="achievement_wishlist_collector_title">Wishlist Collector</string>
+    <string name="achievement_reading_variety_title">Reading Variety</string>
+
+    <!-- Achievement Descriptions -->
+    <string name="achievement_first_steps_description">Start reading your first book</string>
+    <string name="achievement_first_finish_description">Complete your first book</string>
+    <string name="achievement_bookworm_description">Complete 5 books</string>
+    <string name="achievement_book_collector_description">Complete 10 books</string>
+    <string name="achievement_library_master_description">Complete 25 books</string>
+    <string name="achievement_bookworm_pro_description">Complete 50 books</string>
+    <string name="achievement_goal_crusher_description">Complete your annual reading goal</string>
+    <string name="achievement_busy_reader_description">Have 3 books in progress simultaneously</string>
+    <string name="achievement_wishlist_collector_description">Add 10 books to your Want to Read list</string>
+    <string name="achievement_reading_variety_description">Have books in all three lists: Currently Reading, Want to Read, and Finished Reading</string>
+
+</resources>
