@@ -11,7 +11,6 @@ class BootReceiver : BroadcastReceiver() {
         if (intent.action == Intent.ACTION_BOOT_COMPLETED) {
             Log.d("BootReceiver", "Device boot completed, checking reading reminder settings")
 
-            // Check if reminders are enabled
             val preferenceManager = PreferenceManager(context)
             if (preferenceManager.isDailyReminderEnabled()) {
                 Log.d("BootReceiver", "Reminders are enabled, rescheduling")

@@ -23,7 +23,6 @@ class NotificationHelper(private val context: Context) {
 
 
     private fun createNotificationChannel() {
-        // Only needed for Android Oreo (API 26) and higher
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Reading Reminders"
             val descriptionText = "Daily reminders to read books"
@@ -33,7 +32,6 @@ class NotificationHelper(private val context: Context) {
                 description = descriptionText
             }
 
-            // Register the channel with the system
             val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
